@@ -1,5 +1,3 @@
-/* eslint-disable camelcase */
-// Creating appointment model
 import {
   Entity,
   Column,

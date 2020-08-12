@@ -1,10 +1,11 @@
 import { inject, injectable } from 'tsyringe';
 
+import User from '../infra/typeorm/entities/User';
+
 import AppError from '@shared/errors/AppError';
 import IHashProvider from '../providers/HashProvider/models/IHashprovider';
 import IUsersRepository from '../repositories/IUsersRepository'
 
-import User from '../infra/typeorm/entities/User';
 
 interface IRequest {
   user_id: string;
@@ -41,6 +42,7 @@ class UpdateProfileService {
     user.email = email;
 
     if (password && !old_password){
+      console.log({ user, password, old_password });
       throw new AppError('You need to inform the old password to set a new password.');
     }
 

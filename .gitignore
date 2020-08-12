@@ -9,3 +9,5 @@ tmp/*
 
 /coverage.data
 /coverage/
+.env
+ormconfig.json
